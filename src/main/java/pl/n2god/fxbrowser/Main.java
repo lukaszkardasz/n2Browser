@@ -45,4 +45,5 @@ public class Main extends Application {
         prevousButton.setOnAction(x -> engine.executeScript("history.back()"));
         nextButton.setOnAction(x -> engine.executeScript("history.forward()"));
     }
+    /*//TODO add next features*/
 }
