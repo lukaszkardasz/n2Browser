@@ -10,10 +10,6 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-
 /**
  * @author n2god on 16/08/2019
  * @project Scripter
@@ -46,14 +42,7 @@ public class Main extends Application {
     public void initialize() {
         WebEngine engine = webView.getEngine();
         engine.load("https://google.pl");
-
-        prevousButton.setOnAction(x -> {
-            engine.executeScript("history.back()");
-        });
-
-        nextButton.setOnAction(x -> {
-            engine.executeScript("history.forward()");
-        });
-
+        prevousButton.setOnAction(x -> engine.executeScript("history.back()"));
+        nextButton.setOnAction(x -> engine.executeScript("history.forward()"));
     }
 }
